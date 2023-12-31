@@ -9,4 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * SimpleJpaRepository is already implemented with @Repository annotation
  * therefore no need use that annotation
  * */
-public interface EmployeeRepository extends JpaRepository<Employee, Long> { }
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+
+}

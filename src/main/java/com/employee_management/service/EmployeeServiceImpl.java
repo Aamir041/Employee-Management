@@ -1,5 +1,6 @@
 package com.employee_management.service;
 
+import com.employee_management.Role;
 import com.employee_management.dto.EmployeeDto;
 import com.employee_management.entity.Employee;
 import com.employee_management.exception.ResourceNotFoundException;
@@ -51,6 +52,8 @@ public class EmployeeServiceImpl implements EmployeeService{
         employee.setFirstName(updatedEmployee.getFirstName());
         employee.setLastName(updatedEmployee.getLastName());
         employee.setEmail(updatedEmployee.getEmail());
+        employee.setSalary(updatedEmployee.getSalary());
+        employee.setRole(Role.valueOf(updatedEmployee.getRole()));
 
         employeeRepository.save(employee);
         return EmployeeMapper.mapToEmployeeDto(employee);

@@ -1,7 +1,10 @@
 package com.employee_management.entity;
 
+import com.employee_management.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -39,5 +42,12 @@ public class Employee {
      * */
     @Column(name = "email", nullable = false, unique = true)
     private String email;
+
+    @Column(name = "salary", nullable = false)
+    private int salary;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
+    private Role role;
 
 }
